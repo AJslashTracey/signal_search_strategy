@@ -26,6 +26,6 @@ The system generates:
 - Analysis plots (heatmaps, pairplots)
 
 
-##Disclaimer 
+## Disclaimer 
 
 The strategy I  tested is just to showcase what this framework can do and is not profitable in anyway 
