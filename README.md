@@ -23,4 +23,9 @@ A modular framework for backtesting trading signals and analyzing their performa
 The system generates:
 - Performance metrics CSV
 - Filtered signals CSV
-- Analysis plots (heatmaps, pairplots) 
+- Analysis plots (heatmaps, pairplots)
+
+
+##Disclaimer 
+
+The strategy I  tested is just to showcase what this framework can do and is not profitable in anyway 
