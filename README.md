@@ -25,10 +25,14 @@ The system generates:
 - Filtered signals CSV
 - Analysis plots (heatmaps, pairplots) 
 
+## Disclaimer
+
+The example strategy I used works better with an exit signal but I used a time based exit, we could also have used different SMA lengths but I used a time-based exit as this framework was developed to find the best time to close a trade based on statistical evidence
+
 
 
 ## Side notes
-Inside of the system/results you can see results I got from testing a simple moving average cross over strategy on Bitcoin and Ethereum 
+Inside of the system/results you can see results I got from testing a simple moving average crossover strategy on Bitcoin and Ethereum 
 
 
 
