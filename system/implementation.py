@@ -193,7 +193,9 @@ def analyze_and_save_results(results_df: pd.DataFrame, data: pd.DataFrame, entry
     # Create a pivot table and heatmap for total return
     plt.figure(figsize=(12, 8))
     return_pivot = results_df.pivot(index='holding_period', columns='sampling_pct', values='total_return')
-    sns.heatmap(return_pivot, annot=True, fmt=".3f", cmap="viridis")
+    # Create a custom colormap with stronger reds for negative values
+    custom_cmap = sns.diverging_palette(h_neg=0, h_pos=120, s=99, l=40, sep=3, as_cmap=True, center='light')
+    sns.heatmap(return_pivot, annot=True, fmt=".3f", cmap=custom_cmap, center=0)
     plt.title('Mean Total Return')
     plt.tight_layout()
     plt.show()
@@ -204,7 +206,9 @@ def analyze_and_save_results(results_df: pd.DataFrame, data: pd.DataFrame, entry
     sharpe_pivot_clean = sharpe_pivot.fillna(0)  # or use .dropna()
 
     try:
-        sns.heatmap(sharpe_pivot_clean, annot=True, fmt=".3f", cmap="viridis", cbar_kws={'label': 'Sharpe Ratio'})
+        # Use same custom colormap for Sharpe ratio
+        custom_cmap = sns.diverging_palette(h_neg=0, h_pos=120, s=99, l=40, sep=3, as_cmap=True, center='light')
+        sns.heatmap(sharpe_pivot_clean, annot=True, fmt=".3f", cmap=custom_cmap, center=0, cbar_kws={'label': 'Sharpe Ratio'})
         plt.title('Mean Sharpe Ratio')
         plt.tight_layout()
         plt.show()
@@ -214,7 +218,8 @@ def analyze_and_save_results(results_df: pd.DataFrame, data: pd.DataFrame, entry
     # Create a pivot table and heatmap for signal counts
     plt.figure(figsize=(12, 8))
     signals_pivot = results_df.pivot(index='holding_period', columns='sampling_pct', values='signals_per_strategy')
-    sns.heatmap(signals_pivot, annot=True, fmt=".0f", cmap="Blues")
+    # Use sequential green colormap for non-negative values
+    sns.heatmap(signals_pivot, annot=True, fmt=".0f", cmap="Greens")
     plt.title('Number of Signals per Strategy')
     plt.tight_layout()
     plt.show()
@@ -223,7 +228,8 @@ def analyze_and_save_results(results_df: pd.DataFrame, data: pd.DataFrame, entry
         plt.figure(figsize=(12, 8))
         zscore_pivot = results_df.pivot(index='holding_period', columns='sampling_pct', values='mean_z_score')
         try:
-            sns.heatmap(zscore_pivot, annot=True, fmt=".3f", cmap="viridis")
+            # Use sequential green colormap for non-negative values
+            sns.heatmap(zscore_pivot, annot=True, fmt=".3f", cmap="Greens")
             plt.title('Mean Z-Score of Selected Signals')
             plt.tight_layout()
             plt.show()
