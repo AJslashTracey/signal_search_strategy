@@ -6,7 +6,7 @@ A modular framework for backtesting trading signals and analyzing their performa
 
 -   `implementation.py`: Core backtesting engine with parameter testing and analysis functions
 -   `parameterTest.py`: User-facing script for configuring and running backtests
--   `data/`: Directory for input datasets
+-   `system/results`: simulation results
 
 ## Usage
 
