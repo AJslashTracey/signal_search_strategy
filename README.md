@@ -27,7 +27,7 @@ The system generates:
 
 
 
-## additional info
+## Side notes
 Inside of the system/results you can see results I got from testing a simple moving average cross over strategy on Bitcoin and Ethereum 
 
 
