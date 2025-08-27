@@ -25,9 +25,3 @@ The system generates:
 - Filtered signals CSV
 - Analysis plots (heatmaps, pairplots) 
 
-
-Inside of the system/results you can see results I got from testing a simple moving average cross over strategy on Bitcoin and Ethereum 
-
-
-
-(Reach out to me if you want the data I did not add it to the repo as it would be too)
